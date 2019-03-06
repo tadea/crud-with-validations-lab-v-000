@@ -33,8 +33,6 @@ class SongsController < ApplicationController
     else
       render :edit
     end
-  end
-end
 
 
 
