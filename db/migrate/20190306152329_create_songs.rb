@@ -1,4 +1,4 @@
-class Song < ActiveRecord::Migration
+class CreateSongs < ActiveRecord::Migration
   def change
   end
 end
