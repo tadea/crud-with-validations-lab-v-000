@@ -3,6 +3,10 @@ class SongsController < ApplicationController
     @songs = Song.all
   end
 
+  def show
+    @song = Song.find(params[:id])
+  end
+
   def new
     @song = Song.new
   end
@@ -18,6 +22,10 @@ class SongsController < ApplicationController
       end
     end
 
+    def edit
+    @song = Song.find(params[:id])
+  end
+
     def update
       if @song = Song.update(song_params)
           redirect_to song_path(@song)
@@ -31,6 +39,6 @@ class SongsController < ApplicationController
 
   private
       def song_params(*args)
-        params.require(:song).permit(:title, :artist_name, :genre, :release_year, :released)
+        params.require(:song).permitpermit(:title, :released, :release_year, :artist_name, :genre)
       end
 end
